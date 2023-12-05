@@ -20,24 +20,24 @@ module.exports = class PostController {
 
     //validations
     if (!title) {
-      res.status(422).json({ message: 'O título do post é obrigatório.' });
+      res.status(422).json({ message: 'The post title is mandatory.' });
       return;
     }
 
     if (!content) {
-      res.status(422).json({ message: 'O conteúdo do post é obrigatório.' });
+      res.status(422).json({ message: 'The content of the post is mandatory.' });
       return;
     }
 
     if (!tags) {
-      res.status(422).json({ message: 'Adicione pelo menos uma tag ao post.' });
+      res.status(422).json({ message: 'Add at least one tag to the post.' });
       return;
     }
 
     const tagsArray = extractHashtags(tags);
 
     if (!tagsArray || tagsArray.length <= 0) {
-      res.status(422).json({ message: 'o campo de tags não pode ser vazio. ' });
+      res.status(422).json({ message: 'the tag field cannot be empty.' });
       return;
     }
 
@@ -50,7 +50,7 @@ module.exports = class PostController {
     } else {
       res
         .status(422)
-        .json({ message: 'Por favor, adicione uma imagem ao post.' });
+        .json({ message: 'Please add an image to the post.' });
       return;
     }
 
@@ -71,13 +71,13 @@ module.exports = class PostController {
       await post.save();
 
       res.status(201).json({
-        message: 'Post criado com sucesso!',
+        message: 'Post created successfully!',
       });
     } catch (err) {
       console.log(err);
       res.status(500).json({
         message:
-          'Não foi possível criar o post. Por favor, tente novamente mais tarde.',
+          'Unable to create post. Please try again later.',
       });
       return;
     }
@@ -107,7 +107,7 @@ module.exports = class PostController {
 
     //check if id is valid
     if (!ObjectId.isValid(id)) {
-      res.status(401).json({ message: 'ID inválido!' });
+      res.status(401).json({ message: 'Invalid ID!' });
       return;
     }
 
@@ -116,7 +116,7 @@ module.exports = class PostController {
 
     //check if post exists
     if (!post) {
-      res.status(404).json({ message: 'Post não encontrado!' });
+      res.status(404).json({ message: 'Post not found!' });
       return;
     }
 
@@ -129,7 +129,7 @@ module.exports = class PostController {
 
     //check if id is valid
     if (!ObjectId.isValid(id)) {
-      res.status(401).json({ message: 'ID inválido!' });
+      res.status(401).json({ message: 'Invalid ID' });
       return;
     }
 
@@ -138,7 +138,7 @@ module.exports = class PostController {
 
     //check if post exists
     if (!post) {
-      res.status(404).json({ message: 'Post não encontrado!' });
+      res.status(404).json({ message: 'Post not found!' });
       return;
     }
 
@@ -149,7 +149,7 @@ module.exports = class PostController {
     //check if user inside post is the same as current user
     if (user._id.toString() !== post.user._id.toString()) {
       res.status(403).json({
-        message: 'Você não tem permissão para acessar ou modificar este post.',
+        message: 'You do not have permission to access or modify this post.',
       });
       return;
     }
@@ -162,12 +162,12 @@ module.exports = class PostController {
       await Comment.deleteMany({ 'post._id': id });
 
       res.status(200).json({
-        message: 'Post removido com sucesso.',
+        message: 'Post successfully removed.',
       });
     } catch (err) {
       console.log(err);
       res.status(500).json({
-        message: 'Ocorreu um erro ao remover o post.',
+        message: 'An error occurred while removing the post.',
       });
       return;
     }
@@ -179,7 +179,7 @@ module.exports = class PostController {
 
     //check if id is valid
     if (!ObjectId.isValid(id)) {
-      res.status(401).json({ message: 'ID inválido!' });
+      res.status(401).json({ message: 'Invalid ID!' });
       return;
     }
 
@@ -188,7 +188,7 @@ module.exports = class PostController {
 
     //check if post exists
     if (!post) {
-      res.status(404).json({ message: 'Post não encontrado!' });
+      res.status(404).json({ message: 'Post not found!' });
       return;
     }
 
@@ -199,7 +199,7 @@ module.exports = class PostController {
     //check if user inside post is the same as current user
     if (user._id.toString() !== post.user._id.toString()) {
       res.status(403).json({
-        message: 'Você não tem permissão para acessar ou modificar este post.',
+        message: 'You do not have permission to access or modify this post.',
       });
       return;
     }
@@ -212,28 +212,28 @@ module.exports = class PostController {
 
     //validations
     if (!title) {
-      res.status(422).json({ message: 'O título do post é obrigatório.' });
+      res.status(422).json({ message: 'The post title is mandatory.' });
       return;
     }
 
     updatedData.title = title;
 
     if (!content) {
-      res.status(422).json({ message: 'O conteúdo do post é obrigatório.' });
+      res.status(422).json({ message: 'The content of the post is mandatory.' });
       return;
     }
 
     updatedData.content = content;
 
     if (!tags) {
-      res.status(422).json({ message: 'Adicione pelo menos uma tag ao post.' });
+      res.status(422).json({ message: 'Add at least one tag to the post.' });
       return;
     }
 
     const tagsArray = extractHashtags(tags);
 
     if (!tagsArray || tagsArray.length <= 0) {
-      res.status(422).json({ message: 'o campo de tags não pode ser vazio. ' });
+      res.status(422).json({ message: 'the tag field cannot be empty.' });
       return;
     }
 
@@ -247,10 +247,10 @@ module.exports = class PostController {
     try {
       await Post.findByIdAndUpdate(id, updatedData);
 
-      res.status(200).json({ message: 'Post atualizado com sucesso!' });
+      res.status(200).json({ message: 'Post updated successfully!' });
     } catch (err) {
       console.log(err);
-      res.status(500).json({ message: 'Houve um erro ao atualizar o post.' });
+      res.status(500).json({ message: 'There was an error updating the post.' });
     }
   }
 };

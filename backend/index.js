@@ -36,5 +36,5 @@ app.use('/comments', commentRouter);
 
 //listen
 app.listen(port, () => {
-  console.log('Servidor Online!');
+  console.log('Server Online!');
 });

@@ -18,31 +18,31 @@ module.exports = class UserController {
 
     //validations
     if (!name) {
-      res.status(422).json({ message: 'Por favor, preencha o campo de nome.' });
+      res.status(422).json({ message: 'Please fill in the name field.' });
       return;
     }
     if (!email) {
       res
         .status(422)
-        .json({ message: 'Por favor, preencha o campo de email.' });
+        .json({ message: 'Please fill in the email field.' });
       return;
     }
 
     if (!password) {
       res
         .status(422)
-        .json({ message: 'Por favor, preencha o campo de senha.' });
+        .json({ message: 'Please fill in the password field.' });
       return;
     }
     if (!confirmpassword) {
       res.status(422).json({
-        message: 'Por favor, preencha o campo de confirmação de senha.',
+        message: 'Please fill in the password confirmation field.',
       });
       return;
     }
 
     if (password !== confirmpassword) {
-      res.status(422).json({ message: 'As senhas não coincidem.' });
+      res.status(422).json({ message: 'Passwords do not match.' });
       return;
     }
 
@@ -52,7 +52,7 @@ module.exports = class UserController {
 
       if (checkUser) {
         res.status(422).json({
-          message: 'Já existe um usuário registrado com esse email.',
+          message: 'There is already a registered user with this email.',
         });
         return;
       }
@@ -72,7 +72,7 @@ module.exports = class UserController {
       console.log(err);
       res.status(500).json({
         message:
-          'Não foi possível criar sua conta. Por favor, tente novamente mais tarde.',
+          'Unable to create your account. Please try again later.',
       });
       return;
     }
@@ -85,14 +85,14 @@ module.exports = class UserController {
     if (!email) {
       res
         .status(422)
-        .json({ message: 'Por favor, preencha o campo de email.' });
+        .json({ message: 'Please fill in the email field.' });
       return;
     }
 
     if (!password) {
       res
         .status(422)
-        .json({ message: 'Por favor, preencha o campo de senha.' });
+        .json({ message: 'Please fill in the password field.' });
       return;
     }
 
@@ -102,7 +102,7 @@ module.exports = class UserController {
 
       if (!user) {
         res.status(422).json({
-          message: 'Não existe um usuário registrado com esse email.',
+          message: 'There is no registered user with this email.',
         });
         return;
       }
@@ -113,7 +113,7 @@ module.exports = class UserController {
       if (!passwordMatch) {
         res
           .status(422)
-          .json({ message: 'Senha incorreta. Por favor, tente novamente.' });
+          .json({ message: 'Incorrect password. Please try again.' });
         return;
       }
 
@@ -123,7 +123,7 @@ module.exports = class UserController {
       console.log(err);
       res.status(500).json({
         message:
-          'Não foi possível fazer o login. Por favor, tente novamente mais tarde.',
+          'Unable to login. Please try again later.',
       });
       return;
     }
@@ -140,7 +140,7 @@ module.exports = class UserController {
         const decoded = jwt.verify(token, process.env.TOKEN_SECRET);
 
         if (!decoded) {
-          res.status(401).json({ message: 'Acesso Negado!' });
+          res.status(401).json({ message: 'Access denied!' });
           return;
         }
 
@@ -149,7 +149,7 @@ module.exports = class UserController {
           '-password',
         );
       } catch (err) {
-        res.status(401).json({ message: 'Token inválido!' });
+        res.status(401).json({ message: 'Token Invalid!' });
         return;
       }
     } else {
@@ -165,14 +165,14 @@ module.exports = class UserController {
 
     //check if id is valid
     if (!ObjectId.isValid(id)) {
-      res.status(401).json({ message: 'ID inválido!' });
+      res.status(401).json({ message: 'ID Invalid!' });
       return;
     }
 
     const user = await User.findById(id).select('-password');
 
     if (!user) {
-      res.status(401).json({ message: 'Usuário não encontrado!' });
+      res.status(401).json({ message: 'User Not Found!' });
       return;
     }
 
@@ -197,7 +197,7 @@ module.exports = class UserController {
     //validations
 
     if (!name) {
-      res.status(422).json({ message: 'Por favor, preencha o campo de nome.' });
+      res.status(422).json({ message: 'Please fill in the name field.' });
       return;
     }
 
@@ -206,7 +206,7 @@ module.exports = class UserController {
     if (!email) {
       res
         .status(422)
-        .json({ message: 'Por favor, preencha o campo de email.' });
+        .json({ message: 'Please fill in the email field.' });
       return;
     }
 
@@ -216,7 +216,7 @@ module.exports = class UserController {
     if (email !== currentUser.email && checkEmail) {
       res.status(422).json({
         message:
-          'Desculpe, este email já está em uso. Por favor, tente outro email.',
+          'Sorry, this email is already in use. Please try another email.',
       });
       return;
     }
@@ -224,7 +224,7 @@ module.exports = class UserController {
     user.email = email;
 
     if (password !== confirmpassword) {
-      res.status(422).json({ message: 'As senhas não coincidem.' });
+      res.status(422).json({ message: 'Passwords do not match.' });
       return;
     } else if (password === confirmpassword && password) {
       //hashing password
@@ -271,12 +271,12 @@ module.exports = class UserController {
         },
       );
 
-      res.status(200).json({ message: 'Dados atualizados com sucesso!' });
+      res.status(200).json({ message: 'Data updated successfully!' });
     } catch (err) {
       console.log(err);
       res.status(500).json({
         message:
-          'Não foi possível atualizar seus dados. Por favor, tente novamente mais tarde.',
+          'Your data could not be updated. Please try again later.',
       });
       return;
     }

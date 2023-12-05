@@ -15,7 +15,7 @@ module.exports = class PostController {
 
     //check if id is valid
     if (!ObjectId.isValid(postId)) {
-      res.status(401).json({ message: 'ID de post inválido!' });
+      res.status(401).json({ message: 'Invalid post ID!' });
       return;
     }
 
@@ -24,7 +24,7 @@ module.exports = class PostController {
 
     //check if post exists
     if (!post) {
-      res.status(404).json({ message: 'Post não encontrado!' });
+      res.status(404).json({ message: 'Post not found!' });
       return;
     }
 
@@ -39,7 +39,7 @@ module.exports = class PostController {
     if (!commentText) {
       res
         .status(422)
-        .json({ message: 'O comentário do post não pode ser vazio.' });
+        .json({ message: 'The post comment cannot be empty.' });
       return;
     }
 
@@ -59,10 +59,10 @@ module.exports = class PostController {
 
       await comment.save();
 
-      res.status(201).json({ message: 'Comentário criado com sucesso!' });
+      res.status(201).json({ message: 'Comment created successfully!' });
     } catch (err) {
       console.log(err);
-      res.status(500).json({ message: 'Houve um erro ao criar o comentário.' });
+      res.status(500).json({ message: 'There was an error creating the comment.' });
     }
   }
   //FUNCTION TO GET ALL USER COMMENTS
@@ -93,7 +93,7 @@ module.exports = class PostController {
 
     //check if id is valid
     if (!ObjectId.isValid(id)) {
-      res.status(401).json({ message: 'ID de post inválido!' });
+      res.status(401).json({ message: 'Invalid post ID!' });
       return;
     }
 
@@ -102,7 +102,7 @@ module.exports = class PostController {
 
     //check if post exists
     if (!post) {
-      res.status(404).json({ message: 'Post não encontrado!' });
+      res.status(404).json({ message: 'Post not found!' });
       return;
     }
 
@@ -120,7 +120,7 @@ module.exports = class PostController {
 
     //check if id is valid
     if (!ObjectId.isValid(id)) {
-      res.status(401).json({ message: 'ID inválido!' });
+      res.status(401).json({ message: 'Invalid ID!' });
       return;
     }
 
@@ -129,7 +129,7 @@ module.exports = class PostController {
 
     //check if post exists
     if (!comment) {
-      res.status(404).json({ message: 'Comentário não encontrado!' });
+      res.status(404).json({ message: 'Comment not found!' });
       return;
     }
 
@@ -141,7 +141,7 @@ module.exports = class PostController {
     if (user._id.toString() !== comment.user._id.toString()) {
       res.status(403).json({
         message:
-          'Você não tem permissão para acessar ou modificar este comentário.',
+          'You do not have permission to access or modify this comment.',
       });
       return;
     }
@@ -150,12 +150,12 @@ module.exports = class PostController {
       await Comment.findByIdAndRemove(comment._id);
 
       res.status(200).json({
-        message: 'Comentário removido com sucesso.',
+        message: 'Comment successfully removed.',
       });
     } catch (err) {
       console.log(err);
       res.status(500).json({
-        message: 'Ocorreu um erro ao remover o comentário.',
+        message: 'An error occurred while removing the comment.',
       });
       return;
     }
@@ -167,7 +167,7 @@ module.exports = class PostController {
 
     //check if id is valid
     if (!ObjectId.isValid(id)) {
-      res.status(401).json({ message: 'ID de comentário inválido!' });
+      res.status(401).json({ message: 'Invalid comment ID!' });
       return;
     }
 
@@ -176,7 +176,7 @@ module.exports = class PostController {
 
     //check if comment exists
     if (!comment) {
-      res.status(404).json({ message: 'Comentário não encontrado!' });
+      res.status(404).json({ message: 'Comment not found!' });
       return;
     }
 
@@ -188,7 +188,7 @@ module.exports = class PostController {
     if (user._id.toString() !== comment.user._id.toString()) {
       res.status(403).json({
         message:
-          'Você não tem permissão para acessar ou modificar este comentário.',
+          'You do not have permission to access or modify this comment.',
       });
       return;
     }
@@ -203,7 +203,7 @@ module.exports = class PostController {
     if (!commentText) {
       res
         .status(422)
-        .json({ message: 'O comentário do post não pode ser vazio.' });
+        .json({ message: 'The post comment cannot be empty.' });
       return;
     }
 
@@ -212,12 +212,12 @@ module.exports = class PostController {
     try {
       await Comment.findByIdAndUpdate(id, updatedData);
 
-      res.status(200).json({ message: 'Comentário atualizado com sucesso!' });
+      res.status(200).json({ message: 'Comment updated successfully!' });
     } catch (err) {
       console.log(err);
       res
         .status(500)
-        .json({ message: 'Houve um erro ao atualizar o comentário.' });
+        .json({ message: 'There was an error updating the comment.' });
     }
   }
 };
