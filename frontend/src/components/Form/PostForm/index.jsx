@@ -72,14 +72,14 @@ export const PostForm = ({
 
             <Input
                 inputType="file"
-                labelText="Imagem do Post:"
+                labelText="Post Image:"
                 inputName="image"
                 onChangeFn={handleOnFileChange}
             />
             <Input
                 inputType="text"
-                placeholderText="Título do post"
-                labelText="Título do post:"
+                placeholderText="Post Title"
+                labelText="Post Title:"
                 inputName="title"
                 onChangeFn={handleOnChange}
                 inputValue={post.title || ""}
@@ -90,7 +90,7 @@ export const PostForm = ({
             />
             <Input
                 inputType="text"
-                placeholderText="Adicionar tags ex: #tag1 #tag2"
+                placeholderText="tags ex: #tag1 #tag2"
                 labelText="Tags do post:"
                 inputName="tags"
                 onChangeFn={handleOnChange}
@@ -105,7 +105,6 @@ export const PostForm = ({
                 type="submit"
                 text={btnText}
                 maxWidth
-                variant="success"
                 uppercase
             />
         </FormContainer>

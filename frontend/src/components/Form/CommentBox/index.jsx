@@ -14,7 +14,7 @@ export const CommentBox = ({ onClickFn, placeHolderText, inputRef = null }) => {
                 placeholder={placeHolderText}
                 ref={inputRef}
             />
-            <Button text="Comentar" onClickFn={onClickFn} />
+            <Button text="Comment" onClickFn={onClickFn} />
         </Styled.Container>
     );
 };

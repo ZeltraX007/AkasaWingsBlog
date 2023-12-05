@@ -143,7 +143,10 @@ export const Dashboard = () => {
                 {currentUser?.name && (
                     <>
                         <Styled.TitleWrapper>
-                            <Heading text="Dashboard" />
+                            <Heading
+                            type="h2"
+                            size="big"
+                            text="Dashboard" />
                         </Styled.TitleWrapper>
                         {/*displays user information*/}
                         <Styled.ProfileWrapper>
@@ -158,8 +161,9 @@ export const Dashboard = () => {
                                 <Styled.RowStart>
                                     {/* User name */}
                                     <Heading
+                                    type="h2"
+                                    size="big"
                                         text={`${currentUser.name}`}
-                                        size="big"
                                     />
                                     {/* Redirect to user edit page */}
                                     <Styled.CogLink to="/users/edit">
@@ -175,7 +179,7 @@ export const Dashboard = () => {
                                 {/* User created account date */}
                                 <Heading
                                     text={`
-                                    Data de entrada: ${formatDate(
+                                    Entry date: ${formatDate(
                                         currentUser.createdAt
                                     )}
                                 `}
@@ -194,7 +198,7 @@ export const Dashboard = () => {
                                     {/*Display the number of comments the user has made */}
                                     <Styled.CommentsInfoWrapper>
                                         <Heading
-                                            text={"Comentários"}
+                                            text={"Comments"}
                                             size="medium"
                                         />
                                         <Heading
@@ -226,20 +230,18 @@ export const Dashboard = () => {
                                 onClick={switchDashboardView}
                                 aria-label="View Option"
                             >
-                                Comentários
+                                Comments
                             </Styled.ViewOption>
                         </Styled.ViewOptionWrapper>
-                        {/*Display a header for the dashboard, with the title of 
-                    "Título do post" and user posts depending if the current view is "posts", 
-                    and userPosts length is greater than 0 */}
+
                         {currentAction === "posts" && userPosts?.length > 0 && (
                             <>
                                 <Styled.DashboardHeader>
                                     <Styled.DashboardText>
-                                        Título do post
+                                        Title
                                     </Styled.DashboardText>
                                     <Styled.DashboardText>
-                                        Ações
+                                        Actions
                                     </Styled.DashboardText>
                                 </Styled.DashboardHeader>
                                 {userPosts?.map((post, index) => (
@@ -249,7 +251,7 @@ export const Dashboard = () => {
                                         </Styled.DashboardText>
                                         <Styled.DashboardActionsWrapper>
                                             <Button
-                                                text="Ler"
+                                                text="Read"
                                                 variant="outline"
                                                 onClickFn={() =>
                                                     handlePostRedirect(post._id)
@@ -257,7 +259,7 @@ export const Dashboard = () => {
                                                 small={true}
                                             />
                                             <Button
-                                                text="Editar"
+                                                text="Edit"
                                                 variant="outline"
                                                 onClickFn={() =>
                                                     handlePostEditRedirect(
@@ -267,7 +269,7 @@ export const Dashboard = () => {
                                                 small={true}
                                             />
                                             <Button
-                                                text="Excluir"
+                                                text="Delete"
                                                 variant="outline"
                                                 onClickFn={() =>
                                                     removePost(
@@ -287,7 +289,7 @@ export const Dashboard = () => {
                             userPosts?.length == 0 && (
                                 <Styled.CenterTextWrapper>
                                     <Heading
-                                        text="Você ainda não tem nenhum post."
+                                        text="You don't have any posts yet."
                                         size="medium"
                                         bold={false}
                                     />
@@ -300,10 +302,10 @@ export const Dashboard = () => {
                                 <>
                                     <Styled.DashboardHeader>
                                         <Styled.DashboardText>
-                                            Comentário
+                                            Comment
                                         </Styled.DashboardText>
                                         <Styled.DashboardText>
-                                            Ações
+                                            Actions
                                         </Styled.DashboardText>
                                     </Styled.DashboardHeader>
                                     {userComments?.map((comment, index) => (
@@ -316,7 +318,7 @@ export const Dashboard = () => {
                                                         comment.commentText
                                                     }
                                                     ref={editCommentInputRef}
-                                                    placeholder="Edite seu comentário aqui.."
+                                                    placeholder="Edit your comment here.."
                                                 />
                                             ) : (
                                                 <Styled.DashboardText>
@@ -330,7 +332,7 @@ export const Dashboard = () => {
                                                 {activeEdit === comment._id ? (
                                                     <>
                                                         <Button
-                                                            text="Salvar"
+                                                            text="Save"
                                                             variant="success"
                                                             onClickFn={() =>
                                                                 editComment(
@@ -346,7 +348,7 @@ export const Dashboard = () => {
                                                             small={true}
                                                         />
                                                         <Button
-                                                            text="Cancelar"
+                                                            text="Cancel"
                                                             variant="danger"
                                                             onClickFn={() => {
                                                                 handleCancelActiveEdit(
@@ -370,7 +372,7 @@ export const Dashboard = () => {
                                                             small={true}
                                                         />
                                                         <Button
-                                                            text="Editar"
+                                                            text="Edit"
                                                             variant="outline"
                                                             onClickFn={() => {
                                                                 handleActiveEdit(
@@ -380,7 +382,7 @@ export const Dashboard = () => {
                                                             small={true}
                                                         />
                                                         <Button
-                                                            text="Excluir"
+                                                            text="Delete"
                                                             variant="outline"
                                                             onClickFn={() => {
                                                                 removeComment(
@@ -403,7 +405,7 @@ export const Dashboard = () => {
                             userComments?.length == 0 && (
                                 <Styled.CenterTextWrapper>
                                     <Heading
-                                        text="Você ainda não tem nenhum comentário."
+                                        text="You don't have any comments yet."
                                         size="medium"
                                         bold={false}
                                     />

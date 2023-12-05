@@ -9,6 +9,7 @@ export const Heading = ({
     bold = true,
     size = "huge",
     type = "h1",
+    center = false,
 }) => {
     return (
         <Styled.Container
@@ -16,6 +17,7 @@ export const Heading = ({
             bold={bold ? 1 : 0}
             as={type}
             size={size}
+            center={center ? 1 : 0}
         >
             {text}
         </Styled.Container>
@@ -29,4 +31,5 @@ Heading.propTypes = {
     bold: P.bool,
     size: P.oneOf(["huge", "big", "large", "medium", "small", "xsmall"]),
     type: P.oneOf(["h1", "h2", "h3", "h4", "h5", "h6"]),
+    center: P.bool,
 };

@@ -48,9 +48,9 @@ export const EditPost = () => {
         <>
             {authenticated && postData?.title ? (
                 <PostForm
-                    btnText="Edite seu post"
-                    headingText="Editar Post"
-                    subHeadingText="Revise e atualize o seu post"
+                    btnText="Edit your post"
+                    headingText="Edit post"
+                    subHeadingText="Review and update your post"
                     handleSubmit={editPost}
                     postData={postData}
                 />

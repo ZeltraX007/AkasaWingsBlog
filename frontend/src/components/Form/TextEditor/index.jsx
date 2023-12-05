@@ -20,7 +20,7 @@ export const TextEditor = ({ defaultValue, handleOnChangeFn }) => {
 
     return (
         <styled.Container>
-            <styled.Label>Conteúdo do Post:</styled.Label>
+            <styled.Label>Post Content:</styled.Label>
             <ReactQuill value={value} onChange={handleTextValueChange} />
         </styled.Container>
     );

@@ -29,7 +29,7 @@ describe("<Navbar />", () => {
         });
 
         it("should render Navbar", () => {
-            const heading = screen.getByRole("link", { name: "Dev Blog" });
+            const heading = screen.getByRole("link", { name: "AkasaWingsBlog" });
 
             expect(heading).toBeInTheDocument();
         });

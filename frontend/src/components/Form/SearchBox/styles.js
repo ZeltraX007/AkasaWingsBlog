@@ -11,7 +11,9 @@ export const Container = styled.div`
     margin-bottom: 2em;
 
     & ${Heading} {
-        margin-bottom: 0.5em;
+        margin-bottom: 1em;
+        display:flex;
+        justify-content: center;
     }
 `;
 

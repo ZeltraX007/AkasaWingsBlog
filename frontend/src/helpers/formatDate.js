@@ -1,20 +1,20 @@
 export const formatDate = (dateString) => {
     const date = new Date(dateString);
     const monthNames = [
-        "Janeiro",
-        "Fevereiro",
-        "Março",
-        "Abril",
-        "Maio",
-        "Junho",
-        "Julho",
-        "Agosto",
-        "Setembro",
-        "Outubro",
-        "Novembro",
-        "Dezembro",
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December",
     ];
-    return `${date.getDate()} de ${
+    return `${date.getDate()} ${
         monthNames[date.getMonth()]
     } ${date.getFullYear()}`;
 };

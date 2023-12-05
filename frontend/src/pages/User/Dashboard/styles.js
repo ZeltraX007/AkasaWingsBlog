@@ -49,6 +49,7 @@ export const ProfileImageWrapper = styled.div`
             height: 300px;
             object-fit: fill;
             border-radius: 50%;
+            padding: 50px;
 
             @media ${theme.media.lteMedium} {
                 width: 150px;

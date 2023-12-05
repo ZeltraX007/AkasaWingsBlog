@@ -41,41 +41,41 @@ export const Register = () => {
             <>
                 <FormContainer onSubmitFn={handleOnSubmit}>
                     <FormHeader
-                        headingText="Cadastre-se"
-                        subHeadingText="Crie sua conta e compartilhe suas histórias"
+                        headingText="Register"
+                        subHeadingText="Create your account and share your stories"
                     />
                     <Input
                         inputType="text"
-                        placeholderText="Nome do usuário"
-                        labelText="Nome:"
+                        placeholderText="Username"
+                        labelText="Name:"
                         inputName="name"
                         onChangeFn={handleOnChange}
                     />
                     <Input
                         inputType="email"
-                        placeholderText="Email do usuário"
+                        placeholderText="Email"
                         labelText="Email:"
                         inputName="email"
                         onChangeFn={handleOnChange}
                     />
                     <Input
                         inputType="password"
-                        placeholderText="Insira sua senha"
-                        labelText="Senha:"
+                        placeholderText="Password"
+                        labelText="Password:"
                         inputName="password"
                         onChangeFn={handleOnChange}
                     />
 
                     <Input
                         inputType="password"
-                        placeholderText="Confirmar senha"
-                        labelText="Confirme sua senha:"
+                        placeholderText="Confirm Password"
+                        labelText="Confirm your password:"
                         inputName="confirmpassword"
                         onChangeFn={handleOnChange}
                     />
                     <Button
                         type="submit"
-                        text="Cadastrar"
+                        text="Submit"
                         maxWidth
                         variant="success"
                         uppercase

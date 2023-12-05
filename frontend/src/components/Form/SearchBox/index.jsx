@@ -10,17 +10,19 @@ export const SearchBox = ({ OnChangeFn, OnClickFn }) => {
     return (
         <Styled.Container>
             <Heading
-                text="Veja os nossos posts mais recentes"
+                text="See our most recent posts"
                 type="h3"
                 size="large"
+                bold="bold"
+                center={true}
             />
             <Styled.SearchWrapper>
                 <Styled.SearchInput
                     type="text"
-                    placeholder="Pesquisar por tags..."
+                    placeholder="Search by tags..."
                     onChange={OnChangeFn}
                 />
-                <Button text="Pesquisar" onClickFn={OnClickFn} />
+                <Button text="Search" onClickFn={OnClickFn} />
             </Styled.SearchWrapper>
         </Styled.Container>
     );

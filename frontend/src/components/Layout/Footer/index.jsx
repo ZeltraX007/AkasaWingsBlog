@@ -9,10 +9,10 @@ export const Footer = () => {
     return (
         <styled.FooterWrapper>
             <styled.FooterHeading>
-                Escreva sobre o que você tem interesse!
+                It's Your Sky
             </styled.FooterHeading>
             <styled.CopyrightText>
-                DevBlog - Gustavo Matos © {currentDate.getFullYear()}
+                AkasaAir © {currentDate.getFullYear()}
             </styled.CopyrightText>
         </styled.FooterWrapper>
     );

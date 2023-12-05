@@ -26,9 +26,9 @@ export const CreatePost = () => {
         <>
             {authenticated ? (
                 <PostForm
-                    btnText="Criar Post"
-                    headingText="Criar Post"
-                    subHeadingText="Escreva e compartilhe o seu conhecimento!"
+                    btnText="Create Post"
+                    headingText="Create Post"
+                    subHeadingText="Write and share your experience"
                     handleSubmit={createPost}
                 />
             ) : null}

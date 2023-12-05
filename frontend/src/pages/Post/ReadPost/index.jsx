@@ -109,14 +109,14 @@ export const ReadPost = () => {
                         <Styled.BackWrapper>
                             <Styled.BackLink to="/">
                                 <MdChevronLeft />
-                                Voltar
+                                Back
                             </Styled.BackLink>
                         </Styled.BackWrapper>
                         {/* Post title */}
                         <Heading text={post.title} />
                         {/* Post author and creation date */}
                         <TextComponent>
-                            Por: {post.user.name} - {formatDate(post.createdAt)}
+                            By: {post.user.name} - {formatDate(post.createdAt)}
                         </TextComponent>
                         {/* Post image */}
                         <ImageBox src={post.image} altText={post.title} />
@@ -139,11 +139,8 @@ export const ReadPost = () => {
                                 );
                             })}
                         </Styled.TagsWrapper>
-                        {/* Number of comments */}
-                        <Styled.CommentsNumberText>{`Comentários (${comments.length})`}</Styled.CommentsNumberText>
+                        <Styled.CommentsNumberText>{`Comments (${comments.length})`}</Styled.CommentsNumberText>
                         <Styled.Line></Styled.Line>
-                        {/* If user is AUTHENTICATED show input to comment 
-                        ELSE show button to SIGN UP */}
                         {authenticated ? (
                             <CommentBox
                                 onClickFn={() =>
@@ -156,15 +153,15 @@ export const ReadPost = () => {
                                 placeHolderText={
                                     /* Check if post HAS Comments  */
                                     comments.length > 0
-                                        ? "Deixe seu comentário aqui..."
-                                        : "Seja o primeiro a comentar!"
+                                        ? "Leave your comment here..."
+                                        : "Be the first to comment!"
                                 }
                                 inputRef={commentInputRef}
                             />
                         ) : (
                             <Styled.SignUpWrapper>
                                 <Styled.SignUpText>
-                                    Crie uma conta para comentar.
+                                    Create an account to comment.
                                 </Styled.SignUpText>
                                 <Button
                                     text="Criar uma conta"

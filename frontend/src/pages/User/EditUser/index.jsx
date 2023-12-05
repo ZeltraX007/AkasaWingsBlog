@@ -118,8 +118,8 @@ export const EditUser = () => {
             <>
                 <FormContainer onSubmitFn={handleOnSubmit}>
                     <FormHeader
-                        headingText="Editar Dados"
-                        subHeadingText="Atualize suas informações pessoais"
+                        headingText="Edit data"
+                        subHeadingText="Update your personal information"
                     />
                     {preview ? (
                         <>
@@ -146,21 +146,21 @@ export const EditUser = () => {
                     )}
                     <Input
                         inputType="file"
-                        labelText="Foto de perfil:"
+                        labelText="Profile Picture:"
                         inputName="image"
                         onChangeFn={handleOnFileChange}
                     />
                     <Input
                         inputType="text"
-                        placeholderText="Nome do usuário"
-                        labelText="Nome:"
+                        placeholderText="Username"
+                        labelText="Name:"
                         inputName="name"
                         onChangeFn={handleOnChange}
                         inputValue={currentUser.name}
                     />
                     <Input
                         inputType="email"
-                        placeholderText="Email do usuário"
+                        placeholderText="Useremail"
                         labelText="Email:"
                         inputName="email"
                         onChangeFn={handleOnChange}
@@ -168,22 +168,22 @@ export const EditUser = () => {
                     />
                     <Input
                         inputType="password"
-                        placeholderText="Insira sua senha"
-                        labelText="Senha:"
+                        placeholderText="Enter your password"
+                        labelText="Password:"
                         inputName="password"
                         onChangeFn={handleOnChange}
                     />
 
                     <Input
                         inputType="password"
-                        placeholderText="Confirmar senha"
-                        labelText="Confirme sua senha:"
+                        placeholderText="Confirm password"
+                        labelText="Confirm your password"
                         inputName="confirmpassword"
                         onChangeFn={handleOnChange}
                     />
                     <Button
                         type="submit"
-                        text="Atualizar"
+                        text="Update"
                         maxWidth
                         variant="success"
                         uppercase

@@ -21,7 +21,7 @@ describe("<CommentBox />", () => {
 
         it("should render CommentBox", () => {
             const input = screen.getByPlaceholderText(placeHolderText);
-            const button = screen.getByRole("button", { name: "Comentar" });
+            const button = screen.getByRole("button", { name: "Comment" });
 
             expect(input).toBeInTheDocument();
             expect(button).toBeInTheDocument();
@@ -42,7 +42,7 @@ describe("<CommentBox />", () => {
                     placeHolderText={placeHolderText}
                 />
             );
-            const button = screen.getByRole("button", { name: "Comentar" });
+            const button = screen.getByRole("button", { name: "Comment" });
 
             fireEvent.click(button);
 

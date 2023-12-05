@@ -19,13 +19,13 @@ export const Page404 = () => {
 
     return (
         <Styled.Container>
-            <Heading text="404: Página não encontrada" />
+            <Heading text="404: Page not found" />
             <TextComponent>
-                A página solicitada não pode ser encontrada
+            The requested page cannot be found
             </TextComponent>
             <Button
                 uppercase
-                text="Voltar para home"
+                text="Return To home"
                 onClickFn={redirectToHome}
             />
         </Styled.Container>

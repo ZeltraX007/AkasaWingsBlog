@@ -25,7 +25,7 @@ export const useAuth = () => {
     async function register(user) {
         setLoading(true);
         let msgType = "success";
-        let msgText = "Cadastro realizado com sucesso!";
+        let msgText = "Registration completed successfully!";
 
         try {
             const response = await fetch(
@@ -58,7 +58,7 @@ export const useAuth = () => {
     async function login(user) {
         setLoading(true);
         let msgType = "success";
-        let msgText = "Login realizado com sucesso!";
+        let msgText = "Logged in successfully!";
 
         try {
             const response = await fetch(
@@ -91,7 +91,7 @@ export const useAuth = () => {
     //function to logout user
     function logout() {
         let msgType = "success";
-        let msgText = "Logout realizado com sucesso!";
+        let msgText = "Logged out successfully!";
 
         setAuthenticated(false);
         localStorage.removeItem("token");

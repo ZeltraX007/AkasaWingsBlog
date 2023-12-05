@@ -36,7 +36,7 @@ export const Post = ({ imgSrc, headingText, author, tags, postData, id }) => {
                 })}
             </Styled.TagsWrapper>
             <Button
-                text="Ler"
+                text="Read"
                 variant="outline"
                 onClickFn={() => redirectToPostPage(id)}
             />

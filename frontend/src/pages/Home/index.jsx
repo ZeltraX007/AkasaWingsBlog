@@ -105,7 +105,7 @@ export const Home = () => {
                     <Heading
                         type="h2"
                         size="big"
-                        text="Não foi possível carregar os posts no momento. Por favor, tente novamente mais tarde."
+                        text="Unable to load posts at this time. Please try again later."
                     />
                 </Styled.MessageWrapper>
             )}
@@ -115,14 +115,14 @@ export const Home = () => {
                     <Heading
                         type="h2"
                         size="big"
-                        text="Nenhum post encontrado :("
+                        text="No posts found :("
                     />
                 </Styled.MessageWrapper>
             )}
             {/* Display loading message while fetching posts */}
             {isLoading && (
                 <Styled.MessageWrapper>
-                    <Heading type="h2" size="big" text="Carregando..." />
+                    <Heading type="h2" size="big" text="Loading..." />
                 </Styled.MessageWrapper>
             )}
             {/* Display pagination if a filter is applied and there are filtered posts to show */}
@@ -143,7 +143,7 @@ export const Home = () => {
                         <Heading
                             type="h2"
                             size="big"
-                            text={`Nenhum post encontrado com a(s) tag(s) "${searchedTags}"`}
+                            text={`No posts found with the tag(s) "${searchedTags}"`}
                         />
                     </Styled.MessageWrapper>
                 )}

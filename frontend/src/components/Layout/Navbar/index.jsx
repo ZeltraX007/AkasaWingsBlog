@@ -32,7 +32,7 @@ export const Navbar = () => {
     return (
         <styled.Nav>
             <styled.Nav_brand to="/">
-                Dev<styled.bold_Effect>Blog</styled.bold_Effect>
+                Akasa<styled.bold_Effect>Wings</styled.bold_Effect>Blog
             </styled.Nav_brand>
             <styled.Menu open={isOpen ? 1 : 0}>
                 <styled.CloseIcon
@@ -50,7 +50,7 @@ export const Navbar = () => {
                     <>
                         <styled.List_Item>
                             <NavLink
-                                text={"Novo post"}
+                                text={"Post Blog"}
                                 path={"/post/create"}
                                 onclickFn={handleNavbarClose}
                             />
@@ -67,14 +67,14 @@ export const Navbar = () => {
                     <>
                         <styled.List_Item>
                             <NavLink
-                                text={"Entrar"}
+                                text={"Login"}
                                 path={"/login"}
                                 onclickFn={handleNavbarClose}
                             />
                         </styled.List_Item>
                         <styled.List_Item>
                             <NavLink
-                                text={"Cadastrar"}
+                                text={"Register"}
                                 path={"/register"}
                                 onclickFn={handleNavbarClose}
                             />
@@ -82,18 +82,10 @@ export const Navbar = () => {
                     </>
                 )}
 
-                <styled.List_Item>
-                    <NavLink
-                        text={"Sobre"}
-                        path={"/about"}
-                        onclickFn={handleNavbarClose}
-                    />
-                </styled.List_Item>
-
                 {authenticated && (
                     <styled.List_Item>
                         <styled.LogoutText onClick={handleLogout}>
-                            Sair
+                            Logout
                         </styled.LogoutText>
                     </styled.List_Item>
                 )}

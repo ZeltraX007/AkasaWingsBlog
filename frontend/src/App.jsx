@@ -13,7 +13,6 @@ import { ScrollToTop } from "./components/Layout/ScrollToTop";
 import { Message } from "./components/Layout/Message";
 //Pages
 import { Home } from "./pages/Home";
-import { About } from "./pages/About";
 import { Login } from "./pages/Auth/Login";
 import { Register } from "./pages/Auth/Register";
 import { CreatePost } from "./pages/Post/CreatePost";
@@ -41,7 +40,6 @@ function App() {
                                     element={<Navigate to="/home" />}
                                 />
                                 <Route path="/home" element={<Home />} />
-                                <Route path="/about" element={<About />} />
                                 <Route
                                     path="/register"
                                     element={<Register />}

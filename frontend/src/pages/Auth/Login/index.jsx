@@ -41,26 +41,26 @@ export const Login = () => {
             <>
                 <FormContainer onSubmitFn={handleOnSubmit}>
                     <FormHeader
-                        headingText="Entrar"
-                        subHeadingText=" Faça login para acessar sua conta"
+                        headingText="Login"
+                        subHeadingText="Log in to access your account"
                     />
                     <Input
                         inputType="email"
-                        placeholderText="Email do usuário"
+                        placeholderText="Useremail"
                         labelText="Email:"
                         inputName="email"
                         onChangeFn={handleOnChange}
                     />
                     <Input
                         inputType="password"
-                        placeholderText="Insira sua senha"
-                        labelText="Senha:"
+                        placeholderText="Enter your password"
+                        labelText="Password:"
                         inputName="password"
                         onChangeFn={handleOnChange}
                     />
                     <Button
                         type="submit"
-                        text="Entrar"
+                        text="Login"
                         maxWidth
                         variant="success"
                         uppercase

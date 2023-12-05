@@ -19,7 +19,7 @@ export const usePost = () => {
         const token = getToken();
 
         let msgType = "success";
-        let msgText = "";
+        let msgText = "Post created successfully!";
         setIsLoading(true);
 
         try {
@@ -59,8 +59,6 @@ export const usePost = () => {
         if (msgType !== "error") {
             navigate("/home");
         }
-
-        setFlashMessage(msgText, msgType);
     };
 
     //function to edit post
@@ -69,7 +67,7 @@ export const usePost = () => {
         const token = getToken();
 
         let msgType = "success";
-        let msgText = "";
+        let msgText = "Edited successfully!";
         setIsLoading(true);
 
         try {
@@ -110,7 +108,6 @@ export const usePost = () => {
             navigate("/users/dashboard");
         }
 
-        setFlashMessage(msgText, msgType);
     };
 
     //function to remove post
@@ -146,8 +143,6 @@ export const usePost = () => {
             msgText = err.message;
             console.log(err.message);
         }
-
-        setFlashMessage(msgText, msgType);
 
         if (msgType === "success" && successCallbackFn) {
             successCallbackFn();
